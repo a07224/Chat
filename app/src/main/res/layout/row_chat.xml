@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:id="@+id/LinearLayout_main"
     >
     <TextView
         android:textSize="12sp"
@@ -12,12 +13,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </TextView>
-    <TextView
-        android:textSize="20sp"
-        android:id="@+id/TextView_msg"
+
+    <LinearLayout
+        android:id="@+id/linearLayout_msg"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    </TextView>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:textSize="20sp"
+            android:id="@+id/TextView_msg"
+            android:text="메세지"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+        <TextView
+            android:id="@+id/TextView_timestamp"
+            android:text="2020.02.20.02:02"
+            android:textSize="9dp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+    </LinearLayout>
+
 
 
 </LinearLayout>

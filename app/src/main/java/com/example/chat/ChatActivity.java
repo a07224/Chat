@@ -39,6 +39,7 @@ public class ChatActivity extends AppCompatActivity {
         Button_send = findViewById(R.id.Button_send);
         EditText_chat = findViewById(R.id.EditText_chat);
 
+
         Button_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,6 +51,7 @@ public class ChatActivity extends AppCompatActivity {
                     chat.setMsg(msg);
                     myRef.push().setValue(chat);
                 }
+                EditText_chat.setText("");
             }
         });
 
@@ -72,7 +74,7 @@ public class ChatActivity extends AppCompatActivity {
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 ChatData chat = snapshot. getValue(ChatData.class);
                 ((ChatAdapter) mAdapter).addChat(chat);
-
+                recyclerView.scrollToPosition(chatList.size()-1);
             }
 
             @Override
